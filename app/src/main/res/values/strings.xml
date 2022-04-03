@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">testapp</string>
+    <drawable name="clr_normal">#F86506</drawable>
+    <drawable name="clr_pressed">#AC9382</drawable>
+    <drawable name="forword">#41CAA0</drawable>
+    <drawable name="backword">#5E4636</drawable>
+    <drawable name="A">#AEFF0000</drawable>
+    <drawable name="B">#862ADFDF</drawable>
+    <drawable name="C">#E88442</drawable>
+    <drawable name="D">#543FB1</drawable>
+    <drawable name="press">#00FFFFFF</drawable>
+</resources>
