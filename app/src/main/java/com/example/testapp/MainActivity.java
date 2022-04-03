@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -250,8 +251,18 @@ public class MainActivity extends AppCompatActivity {
         //播放向右移动一次后的音频
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    private long firstTime = 0;
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+            long secondTime = System.currentTimeMillis();
+            if (secondTime - firstTime > 2000) {
+                Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                firstTime = secondTime;
+                return true;
+            } else {
+                System.exit(0);
+            }
+        }
+        return super.onKeyUp(keyCode, event);
     }
 }
